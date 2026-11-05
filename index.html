@@ -48,7 +48,7 @@ function confirmStudentName(){const name=$('#studentName').value.trim().replace(
 
 function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function bank(){return state.ch==='all'?WORDS:WORDS.filter(w=>w.ch===state.ch)}
-function assessedBank(){return bank().filter(isMust)}
+function assessedBank(){return bank()}
 function progress(){return data.chapters[state.ch]||{learned:[],spell:false,apply:false}}
 function saveProgress(p){data.chapters[state.ch]=p;persist()}
 function shuffled(a){let r=[...a];for(let i=r.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]]}return r}
